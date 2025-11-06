@@ -20,10 +20,13 @@ WORKDIR /app
 COPY . /app
 
 # نصب وابستگی‌های Composer
-RUN composer install
+RUN composer install --no-dev --optimize-autoloader
 
 # ساخت فایل دیتابیس SQLite اگر وجود نداشت
 RUN mkdir -p /app/database && touch /app/database/database.sqlite
+
+# ✅ تولید APP_KEY و اجرای مهاجرت‌ها (مهم)
+RUN php artisan key:generate --force && php artisan migrate --force
 
 # باز کردن پورت 8000
 EXPOSE 8000
