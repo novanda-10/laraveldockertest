@@ -17,7 +17,7 @@
         @endif
     </head>
 
-            <body>
-                 <h1 class="bg-amber-300 text-amber-700">tailwin test</h1>
-            </body>
+    <body>
+        <h1 class="bg-amber-300 text-blue-800">test tailwind</h1>
+    </body>
 </html>
